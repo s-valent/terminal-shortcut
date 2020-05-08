@@ -26,7 +26,7 @@ Sometimes it was launching fast, sometimes it was slower than launching Terminal
 using the path from Finder window.
 
 ```
-cd $(osascript -e '''
+cd "$(osascript -e '''
 tell application "System Events"
 	if (count of windows of process "Terminal") = 1 then
 		try
@@ -45,5 +45,5 @@ tell application "System Events"
 		end try
 	end if
 end tell
-''')
+''')"
 ```
